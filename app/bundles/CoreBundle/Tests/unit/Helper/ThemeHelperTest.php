@@ -197,25 +197,10 @@ class ThemeHelperTest extends \PHPUnit_Framework_TestCase
 
         $templating = $this->createMock(DelegatingEngine::class);
 
-        // twig does not exist
-        $templating->expects($this->at(0))
+        // fail on twig, php, and default
+        $templating->expects($this->exactly(5))
             ->method('exists')
-            ->willReturn(false);
-
-        // php does not exist
-        $templating->expects($this->at(1))
-            ->method('exists')
-            ->willReturn(false);
-
-        // default theme twig does not exist
-        $templating->expects($this->at(2))
-            ->method('exists')
-            ->willReturn(false);
-
-        // next theme exists
-        $templating->expects($this->at(3))
-            ->method('exists')
-            ->willReturn(true);
+            ->willReturnOnConsecutiveCalls(false, false, false, false, true);
 
         $this->templatingHelper->expects($this->once())
             ->method('getTemplating')
