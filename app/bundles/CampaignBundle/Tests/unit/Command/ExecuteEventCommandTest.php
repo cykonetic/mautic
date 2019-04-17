@@ -11,8 +11,13 @@
 
 namespace Mautic\CampaignBundle\Tests\Command;
 
-class ExecuteEventCommandTest extends AbstractCampaignCommand
+use Mautic\CampaignBundle\Test\CampaignCommandTestCase;
+
+class ExecuteEventCommandTest extends CampaignCommandTestCase
 {
+    /**
+     * @group commands
+     */
     public function testEventsAreExecutedForInactiveEventWithSingleContact()
     {
         putenv('CAMPAIGN_EXECUTIONER_SCHEDULER_ACKNOWLEDGE_SECONDS=1');

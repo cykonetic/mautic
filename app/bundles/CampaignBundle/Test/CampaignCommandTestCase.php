@@ -9,12 +9,12 @@
  * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-namespace Mautic\CampaignBundle\Tests\Command;
+namespace Mautic\CampaignBundle\Test;
 
 use Doctrine\DBAL\Connection;
 use Mautic\CoreBundle\Test\MauticMysqlTestCase;
 
-class AbstractCampaignCommand extends MauticMysqlTestCase
+class CampaignCommandTestCase extends MauticMysqlTestCase
 {
     /**
      * @var array
@@ -51,10 +51,10 @@ class AbstractCampaignCommand extends MauticMysqlTestCase
         $this->prefix = $this->container->getParameter('mautic.db_table_prefix');
 
         // Populate contacts
-        $this->installDatabaseFixtures([dirname(__DIR__).'/../../LeadBundle/DataFixtures/ORM/LoadLeadData.php']);
+        $this->installDatabaseFixtures([dirname(__DIR__) . '/../LeadBundle/DataFixtures/ORM/LoadLeadData.php']);
 
         // Campaigns are so complex that we are going to load a SQL file rather than build with entities
-        $sql = file_get_contents(__DIR__.'/campaign_schema.sql');
+        $sql = file_get_contents(__DIR__ . '/campaign_schema.sql');
 
         // Update table prefix
         $sql = str_replace('#__', $this->container->getParameter('mautic.db_table_prefix'), $sql);

@@ -11,7 +11,9 @@
 
 namespace Mautic\CampaignBundle\Tests\Command;
 
-class TriggerCampaignCommandTest extends AbstractCampaignCommand
+use Mautic\CampaignBundle\Test\CampaignCommandTestCase;
+
+class TriggerCampaignCommandTest extends CampaignCommandTestCase
 {
     public function setUp()
     {
@@ -28,7 +30,7 @@ class TriggerCampaignCommandTest extends AbstractCampaignCommand
     }
 
     /**
-     * @throws \Exception
+     * @group commands
      */
     public function testCampaignExecutionForAll()
     {
@@ -194,7 +196,7 @@ class TriggerCampaignCommandTest extends AbstractCampaignCommand
     }
 
     /**
-     * @throws \Exception
+     * @group commands
      */
     public function testCampaignExecutionForOne()
     {
@@ -355,6 +357,9 @@ class TriggerCampaignCommandTest extends AbstractCampaignCommand
         $this->assertTrue(empty($tags['EmailNotOpen']));
     }
 
+    /**
+     * @group commands
+     */
     public function testCampaignExecutionForSome()
     {
         $this->runCommand('mautic:campaigns:trigger', ['-i' => 1, '--contact-ids' => '1,2,3,4,19']);

@@ -14,9 +14,9 @@ namespace Mautic\CampaignBundle\Tests\Helper;
 use Mautic\CampaignBundle\Entity\Campaign;
 use Mautic\CampaignBundle\Event\CampaignLeadChangeEvent;
 use Mautic\CampaignBundle\Helper\CampaignEventHelper;
-use Mautic\CampaignBundle\Tests\CampaignTestAbstract;
+use Mautic\CampaignBundle\Test\CampaignTestCase;
 
-class CampaignEventHelperTest extends CampaignTestAbstract
+class CampaignEventHelperTest extends CampaignTestCase
 {
     public function testValidateLeadChangeTriggerWithEmptyCampaigns()
     {

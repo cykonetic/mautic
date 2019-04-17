@@ -12,10 +12,10 @@
 namespace Mautic\CampaignBundle\Tests\Event;
 
 use Mautic\CampaignBundle\Event\CampaignBuilderEvent;
-use Mautic\CampaignBundle\Tests\CampaignTestAbstract;
+use Mautic\CampaignBundle\Test\CampaignTestCase;
 use Mautic\CoreBundle\Translation\Translator;
 
-class CampaignBuilderEventTest extends CampaignTestAbstract
+class CampaignBuilderEventTest extends CampaignTestCase
 {
     public function testAddGetDecision()
     {

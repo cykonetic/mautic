@@ -11,8 +11,13 @@
 
 namespace Mautic\CampaignBundle\Tests\Command;
 
-class ValidateEventCommandTest extends AbstractCampaignCommand
+use Mautic\CampaignBundle\Test\CampaignCommandTestCase;
+
+class ValidateEventCommandTest extends CampaignCommandTestCase
 {
+    /**
+     * @group commands
+     */
     public function testEventsAreExecutedForInactiveEventWithSingleContact()
     {
         $this->runCommand('mautic:campaigns:trigger', ['-i' => 1, '--contact-id' => 1]);
@@ -37,6 +42,9 @@ class ValidateEventCommandTest extends AbstractCampaignCommand
         $this->assertCount(0, $byEvent[10]); // the positive path should be 0
     }
 
+    /**
+     * @group commands
+     */
     public function testEventsAreExecutedForInactiveEventWithMultipleContact()
     {
         $this->runCommand('mautic:campaigns:trigger', ['-i' => 1, '--contact-ids' => '1,2,3']);

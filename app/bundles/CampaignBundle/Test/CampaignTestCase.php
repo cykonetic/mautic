@@ -9,7 +9,7 @@
  * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-namespace Mautic\CampaignBundle\Tests;
+namespace Mautic\CampaignBundle\Test;
 
 use Doctrine\ORM\EntityManager;
 use Mautic\CampaignBundle\EventCollector\EventCollector;
@@ -23,8 +23,9 @@ use Mautic\FormBundle\Entity\FormRepository;
 use Mautic\FormBundle\Model\FormModel;
 use Mautic\LeadBundle\Model\LeadModel;
 use Mautic\LeadBundle\Model\ListModel;
+use PHPUnit\Framework\TestCase;
 
-class CampaignTestAbstract extends \PHPUnit_Framework_TestCase
+class CampaignTestCase extends TestCase
 {
     protected static $mockId   = 232;
     protected static $mockName = 'Mock name';
