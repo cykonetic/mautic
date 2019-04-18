@@ -11,11 +11,12 @@
 
 namespace Mautic\LeadBundle\Tests\Controller\Api;
 
+use Mautic\CampaignBundle\Test\CampaignTestCase;
 use Mautic\CampaignBundle\Tests\CampaignTestAbstract;
 use Mautic\LeadBundle\Controller\Api\FieldApiController;
 use Symfony\Component\HttpFoundation\Request;
 
-class FieldApiControllerTest extends CampaignTestAbstract
+class FieldApiControllerTest extends CampaignTestCase
 {
     private $defaultWhere = [
         [
@@ -25,7 +26,7 @@ class FieldApiControllerTest extends CampaignTestAbstract
         ],
     ];
 
-    public function testgetWhereFromRequestWithNoWhere()
+    public function testGetWhereFromRequestWithNoWhere()
     {
         $request = $this->getMockBuilder(Request::class)
             ->disableOriginalConstructor()
@@ -36,7 +37,7 @@ class FieldApiControllerTest extends CampaignTestAbstract
         $this->assertEquals($this->defaultWhere, $result);
     }
 
-    public function testgetWhereFromRequestWithSomeWhere()
+    public function testGetWhereFromRequestWithSomeWhere()
     {
         $where = [
             [

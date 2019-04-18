@@ -44,7 +44,7 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-class FormTestAbstract extends WebTestCase
+class FormTestCase extends WebTestCase
 {
     protected static $mockId   = 123;
     protected static $mockName = 'Mock test name';

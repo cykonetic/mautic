@@ -12,10 +12,10 @@
 namespace Mautic\ApiBundle\Tests\Controller;
 
 use Mautic\ApiBundle\Controller\CommonApiController;
-use Mautic\CampaignBundle\Tests\CampaignTestAbstract;
+use Mautic\CampaignBundle\Test\CampaignTestCase;
 use Symfony\Component\HttpFoundation\Request;
 
-class CommonApiControllerTest extends CampaignTestAbstract
+class CommonApiControllerTest extends CampaignTestCase
 {
     public function testAddAliasIfNotPresentWithOneColumnWithoutAlias()
     {
