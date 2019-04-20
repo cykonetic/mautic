@@ -47,7 +47,7 @@ abstract class AbstractMauticTestCase extends WebTestCase
 
     public function setUp()
     {
-        \Mautic\CoreBundle\ErrorHandler\ErrorHandler::register('prod');
+        \Mautic\CoreBundle\ErrorHandler\ErrorHandler::register('test');
 
         $this->client = static::createClient([], $this->clientServer);
         $this->client->disableReboot();

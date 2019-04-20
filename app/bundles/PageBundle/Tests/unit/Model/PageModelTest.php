@@ -15,11 +15,12 @@ use Mautic\CoreBundle\Entity\IpAddress;
 use Mautic\LeadBundle\Entity\Lead;
 use Mautic\PageBundle\Entity\Hit;
 use Mautic\PageBundle\Entity\Page;
+use Mautic\PageBundle\Test\PageTestCase;
 use Mautic\PageBundle\Tests\PageTestAbstract;
 use ReflectionClass;
 use Symfony\Component\HttpFoundation\Request;
 
-class PageModelTest extends PageTestAbstract
+class PageModelTest extends PageTestCase
 {
     public function testUtf8CharsInTitle()
     {

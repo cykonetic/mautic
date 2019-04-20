@@ -14,10 +14,10 @@ namespace Mautic\FormBundle\Tests\Model;
 use Doctrine\Common\Collections\ArrayCollection;
 use Mautic\FormBundle\Entity\Field;
 use Mautic\FormBundle\Entity\Form;
-use Mautic\FormBundle\Tests\FormTestAbstract;
+use Mautic\FormBundle\Test\FormTestCase;
 use Mautic\LeadBundle\Entity\LeadField;
 
-class FormModelTest extends FormTestAbstract
+class FormModelTest extends FormTestCase
 {
     public function testSetFields()
     {
@@ -192,6 +192,7 @@ class FormModelTest extends FormTestAbstract
 
     public function testGetEntityForSyncedLocaleField()
     {
+        //$this->markTestSkipped('broken?' );
         $formField = $this->standardSyncListStaticFieldTest('locale');
 
         $this->assertArrayHasKey('cs_CZ', $formField->getProperties()['list']['list']);
@@ -206,7 +207,9 @@ class FormModelTest extends FormTestAbstract
 
     private function standardSyncListFieldTest($type)
     {
-        $formModel  = $this->getFormModel();
+        if (defin) {
+            $formModel  = $this->getFormModel();
+        }
         $formEntity = $this->createMock(Form::class);
         $fields     = new ArrayCollection();
         $options    = [

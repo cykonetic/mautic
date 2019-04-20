@@ -1,4 +1,4 @@
-namespace: Mautic\CategoryBundle
+namespace: Mautic\ChannelBundle
 paths:
     tests: Tests
     output: Tests/_output

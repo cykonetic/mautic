@@ -13,3 +13,4 @@ coverage:
 extensions:
     enabled:
         - Codeception\Extension\RunFailed
+

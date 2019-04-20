@@ -22,13 +22,13 @@ use Mautic\FormBundle\Helper\FormUploader;
 use Mautic\FormBundle\Model\ActionModel;
 use Mautic\FormBundle\Model\FieldModel;
 use Mautic\FormBundle\Model\FormModel;
-use Mautic\FormBundle\Tests\FormTestAbstract;
+use Mautic\FormBundle\Test\FormTestCase;
 use Mautic\LeadBundle\Model\FieldModel as LeadFieldModel;
 use Mautic\LeadBundle\Model\LeadModel;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-class DeleteFormTest extends FormTestAbstract
+class DeleteFormTest extends FormTestCase
 {
     public function testDelete()
     {

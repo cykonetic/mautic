@@ -2,3 +2,4 @@ actor: UnitTester
 modules:
     enabled:
         - \Mautic\FormBundle\Helper\Unit
+bootstrap: _bootstrap.php

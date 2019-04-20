@@ -16,11 +16,12 @@ use Mautic\PageBundle\Entity\Redirect;
 use Mautic\PageBundle\Event\RedirectGenerationEvent;
 use Mautic\PageBundle\Model\RedirectModel;
 use Mautic\PageBundle\PageEvents;
+use Mautic\PageBundle\Test\PageTestCase;
 use Mautic\PageBundle\Tests\PageTestAbstract;
 use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
-class RedirectModelTest extends PageTestAbstract
+class RedirectModelTest extends PageTestCase
 {
     public function testCreateRedirectEntity_WhenCalled_ReturnsRedirect()
     {

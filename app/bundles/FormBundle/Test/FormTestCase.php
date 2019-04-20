@@ -9,7 +9,7 @@
  * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-namespace Mautic\FormBundle\Tests;
+namespace Mautic\FormBundle\Test;
 
 use Doctrine\ORM\EntityManager;
 use Mautic\CampaignBundle\Model\CampaignModel;
@@ -53,7 +53,7 @@ class FormTestCase extends WebTestCase
     protected $formRepository;
     protected $leadFieldModel;
 
-    protected function setUp()
+    public function setUp()
     {
         self::bootKernel();
         $this->mockTrackingId = hash('sha1', uniqid(mt_rand()));
@@ -80,19 +80,16 @@ class FormTestCase extends WebTestCase
         $this->leadFieldModel = $this->createMock(LeadFieldModel::class);
         $this->formRepository = $this->createMock(FormRepository::class);
 
-        $leadModel->expects($this
-            ->any())
+        $leadModel->expects($this->any())
             ->method('getCurrentLead')
             ->willReturn($this
                 ->returnValue(['id' => self::$mockId, 'name' => self::$mockName]));
 
-        $templatingHelperMock->expects($this
-            ->any())
+        $templatingHelperMock->expects($this->any())
             ->method('getTemplating')
             ->willReturn($this->container->get('templating'));
 
-        $entityManager->expects($this
-            ->any())
+        $entityManager->expects($this->any())
             ->method('getRepository')
             ->will(
                 $this->returnValueMap(

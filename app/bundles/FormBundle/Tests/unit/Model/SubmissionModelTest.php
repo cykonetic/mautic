@@ -13,10 +13,10 @@ namespace Mautic\FormBundle\Tests\Model;
 
 use Mautic\FormBundle\Entity\Form;
 use Mautic\FormBundle\Event\SubmissionEvent;
-use Mautic\FormBundle\Tests\FormTestAbstract;
+use Mautic\FormBundle\Test\FormTestCase;
 use Symfony\Component\HttpFoundation\Request;
 
-class SubmissionModelTest extends FormTestAbstract
+class SubmissionModelTest extends FormTestCase
 {
     public function testSaveSubmission()
     {

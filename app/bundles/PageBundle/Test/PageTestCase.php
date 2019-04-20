@@ -9,7 +9,7 @@
  * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-namespace Mautic\PageBundle\Tests;
+namespace Mautic\PageBundle\Test;
 
 use Doctrine\ORM\EntityManager;
 use Mautic\CoreBundle\Helper\CookieHelper;
@@ -31,7 +31,7 @@ use Mautic\QueueBundle\Queue\QueueService;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
-class PageTestAbstract extends WebTestCase
+class PageTestCase extends WebTestCase
 {
     protected static $mockId   = 123;
     protected static $mockName = 'Mock test name';
