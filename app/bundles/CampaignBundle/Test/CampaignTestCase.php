@@ -23,9 +23,8 @@ use Mautic\FormBundle\Entity\FormRepository;
 use Mautic\FormBundle\Model\FormModel;
 use Mautic\LeadBundle\Model\LeadModel;
 use Mautic\LeadBundle\Model\ListModel;
-use PHPUnit\Framework\TestCase;
 
-class CampaignTestCase extends TestCase
+class CampaignTestCase extends \PHPUnit_Framework_TestCase
 {
     protected static $mockId   = 232;
     protected static $mockName = 'Mock name';

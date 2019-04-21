@@ -53,10 +53,11 @@ class FormTestCase extends WebTestCase
     protected $formRepository;
     protected $leadFieldModel;
 
-    public function setUp()
+    protected function setUp()
     {
+        $_SERVER['KERNEL_DIR'] = __DIR__.'/../../../../app';
         self::bootKernel();
-        $this->mockTrackingId = hash('sha1', uniqid(mt_rand()));
+        $this->mockTrackingId = hash('sha1', uniqid(mt_rand(), true));
         $this->container      = self::$kernel->getContainer();
     }
 
@@ -82,8 +83,7 @@ class FormTestCase extends WebTestCase
 
         $leadModel->expects($this->any())
             ->method('getCurrentLead')
-            ->willReturn($this
-                ->returnValue(['id' => self::$mockId, 'name' => self::$mockName]));
+            ->willReturn(['id' => self::$mockId, 'name' => self::$mockName]);
 
         $templatingHelperMock->expects($this->any())
             ->method('getTemplating')
@@ -91,13 +91,9 @@ class FormTestCase extends WebTestCase
 
         $entityManager->expects($this->any())
             ->method('getRepository')
-            ->will(
-                $this->returnValueMap(
-                    [
+            ->willReturnMap([
                         ['MauticFormBundle:Form', $this->formRepository],
-                    ]
-                )
-            );
+                    ]);
 
         $formModel = new FormModel(
             $requestStack,
@@ -179,14 +175,10 @@ class FormTestCase extends WebTestCase
 
         $entityManager->expects($this->any())
             ->method('getRepository')
-            ->will(
-                $this->returnValueMap(
-                    [
+            ->willReturnMap([
                         ['MauticLeadBundle:Lead', $leadRepository],
                         ['MauticFormBundle:Submission', $formRepository],
-                    ]
-                )
-            );
+                    ]);
 
         $leadRepository->expects($this->any())
             ->method('getLeadsByUniqueFields')

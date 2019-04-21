@@ -13,7 +13,7 @@ namespace Mautic\EmailBundle\Tests\Helper;
 
 use Mautic\EmailBundle\Exception\InvalidEmailException;
 use Mautic\EmailBundle\Helper\EmailValidator;
-use Mautic\EmailBundle\Tests\Helper\EventListener\EmailValidationSubscriber;
+use Mautic\EmailBundle\Test\EventListener\EmailValidationSubscriber;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\Translation\Translator;
 

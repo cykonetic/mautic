@@ -12,7 +12,7 @@
 namespace Mautic\CampaignBundle\Tests\EventListener;
 
 use Mautic\ApiBundle\EventListener\ApiSubscriber;
-use Mautic\CoreBundle\Tests\CommonMocks;
+use Mautic\CoreBundle\Test\CommonMocks;
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\Request;
 

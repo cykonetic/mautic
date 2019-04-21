@@ -19,7 +19,7 @@ use Mautic\EmailBundle\MonitoredEmail\Message;
 use Mautic\EmailBundle\MonitoredEmail\Processor\Bounce;
 use Mautic\EmailBundle\MonitoredEmail\Search\ContactFinder;
 use Mautic\EmailBundle\MonitoredEmail\Search\Result;
-use Mautic\EmailBundle\Tests\MonitoredEmail\Transport\TestTransport;
+use Mautic\EmailBundle\Tests\MonitoredEmail\Transport\MonitorTestTransport;
 use Mautic\LeadBundle\Entity\Lead;
 use Mautic\LeadBundle\Model\LeadModel;
 use Monolog\Logger;
@@ -39,7 +39,7 @@ class BounceTest extends \PHPUnit_Framework_TestCase
      */
     public function testProcessorInterfaceProcessesMessage()
     {
-        $transport     = new TestTransport(new \Swift_Events_SimpleEventDispatcher());
+        $transport     = new MonitorTestTransport(new \Swift_Events_SimpleEventDispatcher());
         $contactFinder = $this->getMockBuilder(ContactFinder::class)
             ->disableOriginalConstructor()
             ->getMock();

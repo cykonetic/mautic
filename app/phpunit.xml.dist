@@ -15,10 +15,10 @@
 
     <testsuites>
         <testsuite name="Project Test Suite">
-            <directory>bundles/*Bundle/Tests</directory>
+            <directory>bundles/*Bundle/Tests/unit</directory>
         </testsuite>
         <testsuite name="Plugin tests">
-            <directory>./../plugins/*Bundle/Tests</directory>
+            <directory>./../plugins/*Bundle/Tests/unit</directory>
         </testsuite>
     </testsuites>
 
